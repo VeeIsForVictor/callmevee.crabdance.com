@@ -1,4 +1,6 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<head>
+	<title>CallMeVee</title>
+</head>
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
