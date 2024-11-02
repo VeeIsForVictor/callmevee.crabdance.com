@@ -10,6 +10,7 @@
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
 	import Background from '$lib/Background.svelte';
+	import NavBar from '$lib/NavBar.svelte';
 
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
@@ -19,5 +20,9 @@
 </script>
 
 <Background>
+	<header class="sticky inset-x-0 top-0 z-50 items-center justify-center p-3 lg:px-16">
+		<NavBar />
+	</header>
+
 	<slot />
 </Background>
