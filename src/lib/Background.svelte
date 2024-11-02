@@ -37,9 +37,17 @@
 		left: 0;
 		margin: 0;
 		padding: 0;
-		background: #313a50;
 		overflow: hidden;
 	}
+
+	.background:where([data-mode='dark']) {
+		background: theme('colors.surface.900');
+	}
+
+	.background:where([data-mode*='dark']) {
+		background: theme('colors.surface.100');
+	}
+
 	.background li {
 		position: absolute;
 		display: block;
