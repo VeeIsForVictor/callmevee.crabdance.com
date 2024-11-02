@@ -43,6 +43,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"highlight.js": "11.10.0"
+		"highlight.js": "11.10.0",
+		"sanitize-html": "^2.13.1"
 	}
 }
