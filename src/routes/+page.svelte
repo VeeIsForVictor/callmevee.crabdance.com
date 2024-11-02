@@ -2,14 +2,7 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
-		<h1 class="h1">Let's get cracking bones!</h1>
-		<p>Start by exploring:</p>
-		<ul>
-			<li><code class="code">/src/routes/+layout.svelte</code> - barebones layout</li>
-			<li><code class="code">/src/app.postcss</code> - app wide css</li>
-			<li>
-				<code class="code">/src/routes/+page.svelte</code> - this page, you can replace the contents
-			</li>
-		</ul>
+		<h1 class="h1">Hello, there!</h1>
+		<p>I'm Victor and this is my personal website's WIP front page. The fact you can see this means my web server is in a rudimentary state and should be ready eventually. Cheers!</p>
 	</div>
 </div>
