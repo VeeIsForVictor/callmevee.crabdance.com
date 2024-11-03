@@ -8,11 +8,14 @@
 		link: string;
 	};
 
+	export let cards: carouselCard[];
+	
 	let maxBlurbLength = 100;
 	let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;
-
-	export let cards: carouselCard[];
-
+	
+	let maxCardsPerScroll = 4;
+	$: cardWidth = `${Math.round(100 / Math.min(maxCardsPerScroll, cards.length)) - 2}%`;
+	
 	let elemCarousel: HTMLDivElement;
 
 	function multiColumnLeft(): void {
@@ -41,7 +44,7 @@
 		class="snap-x snap-mandatory scroll-smooth flex gap-2 pb-2 overflow-x-auto"
 	>
 		{#each cards as card}
-			<a href={card.link} class="card shrink-0 w-[35%] snap-start">
+			<a href={card.link} class="card shrink-0 snap-start" style="width: {cardWidth}">
 				<header class="card-header prose dark:prose-invert">
 					<h3 class="h3">{card.title}</h3>
 				</header>
