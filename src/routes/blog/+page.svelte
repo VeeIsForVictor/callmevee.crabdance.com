@@ -3,11 +3,17 @@
 
 	export let data;
 
-	let { blog, blogPosts } = data;
+	let { blog, blogPosts, tags } = data;
+
+	let featuredTag = "featured";
 
 	let blogCards: {title: string, blurb: string, link: string}[] = [];
 
-	blogCards = blogPosts?.map(({ title, slug, content }) => ({
+	let featuredPosts = blogPosts.filter(
+		(post) => post
+	)
+
+	blogCards = featuredPosts?.map(({ title, slug, content }) => ({
 		title,
 		blurb: content,
 		link: `./${slug}`
@@ -20,7 +26,13 @@
 		<p>{@html blog.subheadline}</p>
 	</div>
 	<div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-900 rounded-lg gap-8">
-		<h3 class="h3 prose dark:prose-invert">Featured Posts</h3>
+		<h3 class="h3 prose dark:prose-invert">
+			<select class="select w-40" style="text-transform: capitalize" bind:value={featuredTag}>
+				{#each tags as {tag_name}}
+					<option value={tag_name} style="text-transform: capitalize">{tag_name}</option>
+				{/each}
+			</select> Posts
+		</h3>
 		<BlogCarousel cards={blogCards} />
 	</div>
 </div>
