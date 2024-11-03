@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ArrowLeft, ArrowRight } from '@steeze-ui/heroicons';
 	import { Icon } from '@steeze-ui/svelte-icon';
+	import { blur, crossfade, fade } from 'svelte/transition';
 
 	type carouselCard = {
 		title: string;
@@ -14,7 +15,7 @@
 	let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;
 	
 	let maxCardsPerScroll = 4;
-	$: cardWidth = `${Math.round(100 / Math.min(maxCardsPerScroll, cards.length)) - 2}%`;
+	$: cardWidth = `${Math.round(100 / Math.min(maxCardsPerScroll, cards.length))}%`;
 	
 	let elemCarousel: HTMLDivElement;
 
@@ -44,7 +45,7 @@
 		class="snap-x snap-mandatory scroll-smooth scrollbar-hidden flex gap-2 pb-2 overflow-x-auto h-60"
 	>
 		{#if cards.length == 0}
-			<div class="flex flex-col items-center justify-center card shrink-0 snap-start w-[100%]">
+			<div transition:blur class="flex flex-col items-center justify-center card shrink-0 snap-start w-[100%]">
 				<header class="card-header prose dark:prose-invert">
 					<h3 class="h3">No blog posts found for this tag</h3>
 				</header>
@@ -54,7 +55,7 @@
 			</div>
 		{/if}
 		{#each cards as card}
-			<a href={card.link} class="card shrink-0 snap-start h-[100%]" style="width: {cardWidth}">
+			<a transition:blur href={card.link} class="card shrink-0 snap-start h-[100%]" style="width: {cardWidth}">
 				<header class="card-header prose dark:prose-invert">
 					<h3 class="h3">{card.title}</h3>
 				</header>
