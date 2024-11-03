@@ -1,7 +1,18 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
+	import BlogCarousel from "$lib/components/BlogCarousel.svelte";
+
     export let data;
 
-    $: ({ blog, blogPosts, tags } = data);
+    let { blog, blogPosts, tags } = data;
+
+    console.log(blogPosts)
+
+    let blogCards: any[] = [];
+
+    blogCards = blogPosts?.map(
+        ({title, slug, content}) => ({title, blurb: content, link: `./${slug}`})
+    );
 </script>
 
 <div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
@@ -11,16 +22,6 @@
     </div>
     <div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-900 rounded-lg gap-4">
         <h3 class="h3 prose dark:prose-invert">Featured Posts</h3>
-        <div class="flex flex-row gap-4 place-self-center">
-            {#each blogPosts as {title, slug}}
-                <a href="./{slug}">
-                    <div class="card w-96">
-                        <header class="card-header">
-                            <h4 class="h4 p-4">{title}</h4>
-                        </header>
-                    </div>
-                </a>
-            {/each}
-        </div>
+        <BlogCarousel cards={blogCards}/>
     </div>
 </div>
