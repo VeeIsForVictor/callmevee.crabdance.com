@@ -10,6 +10,7 @@ RUN pnpm install
 
 COPY . .
 
+ENV PUBLIC_APIURL=$PUBLIC_APIURL
 RUN pnpm run build
 RUN pnpm prune --prod
 
