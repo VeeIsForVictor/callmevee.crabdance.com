@@ -19,7 +19,7 @@
 		<h1 class="h1">{blog.headline}</h1>
 		<p>{@html blog.subheadline}</p>
 	</div>
-	<div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-900 rounded-lg gap-4">
+	<div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-900 rounded-lg gap-8">
 		<h3 class="h3 prose dark:prose-invert">Featured Posts</h3>
 		<BlogCarousel cards={blogCards} />
 	</div>
