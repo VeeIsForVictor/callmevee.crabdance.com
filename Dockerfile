@@ -10,7 +10,7 @@ RUN pnpm install
 
 COPY . .
 
-ENV PUBLIC_APIURL=$PUBLIC_APIURL
+ENV PUBLIC_APIURL=https://callmeadmin.crabdance.com
 RUN pnpm run build
 RUN pnpm prune --prod
 
