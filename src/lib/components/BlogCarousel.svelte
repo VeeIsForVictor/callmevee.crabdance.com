@@ -28,7 +28,7 @@
 <div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
 	<!-- Button: Left -->
 	<button type="button" class="btn-icon variant-filled" on:click={multiColumnLeft}>
-		<i class="fa-solid fa-arrow-left"/>
+		
 	</button>
 	<!-- Carousel -->
 	<div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex gap-2 pb-2 overflow-x-auto">

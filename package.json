@@ -45,6 +45,7 @@
 	"type": "module",
 	"dependencies": {
 		"@directus/sdk": "^18.0.0",
+		"@steeze-ui/heroicons": "^2.4.0",
 		"highlight.js": "11.10.0",
 		"posthog-js": "^1.180.1",
 		"sanitize-html": "^2.13.1"
