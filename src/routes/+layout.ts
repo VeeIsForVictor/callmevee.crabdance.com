@@ -1,7 +1,7 @@
 import { browser, building, dev } from '$app/environment';
 import { posthog } from 'posthog-js';
 
-export const prerender = true;
+export const prerender = false;
 export const trailingSlash = 'always';
 
 export function load() {
