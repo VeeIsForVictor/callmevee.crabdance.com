@@ -4,14 +4,14 @@
     $: ({ blog, blogPosts, tags } = data);
 </script>
 
-<div class="container h-full flex flex-col justify-left items-center mx-20 py-20 max-w-screen-lg prose dark:prose-invert text-justify gap-16">
-    <div class="flex flex-col items-center">
+<div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
+    <div class="flex flex-col items-center prose dark:prose-invert">
         <h1 class="h1">{blog.headline}</h1>
         <p>{@html blog.subheadline}</p>
     </div>
-    <div class="h-full w-max shadow-md p-8 bg-surface-900 rounded-lg">
-        <h3>Featured Posts</h3>
-        <div class="flex flex-row align-center gap-4">
+    <div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-900 rounded-lg gap-4">
+        <h3 class="h3 prose dark:prose-invert">Featured Posts</h3>
+        <div class="flex flex-row gap-4 place-self-center">
             {#each blogPosts as {title, slug}}
                 <a href="./{slug}">
                     <div class="card w-96">

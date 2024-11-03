@@ -33,7 +33,7 @@
 		<NavBar />
 	</header>
 
-	<div class="container h-full mx-auto flex justify-center items-center prose dark:prose-invert">
+	<div class="container w-full h-full mx-auto flex justify-center items-center">
 		<slot />
 	</div>
 </Background>
