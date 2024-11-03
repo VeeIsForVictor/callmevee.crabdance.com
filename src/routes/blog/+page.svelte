@@ -3,21 +3,34 @@
 
 	export let data;
 
-	let { blog, blogPosts, tags } = data;
+	let { blog, blogPosts, blogPostsTags, tags } = data;
 
-	let featuredTag = "featured";
+	let featuredTag = "meta";
 
 	let blogCards: {title: string, blurb: string, link: string}[] = [];
 
-	let featuredPosts = blogPosts.filter(
-		(post) => post
-	)
+	let featuredPostIds = [];
+	let featuredPosts = [];
 
-	blogCards = featuredPosts?.map(({ title, slug, content }) => ({
+	$: featuredPostIds = blogPostsTags.filter(
+		(blogPostTag) => blogPostTag.tags_tag_name === featuredTag
+	).map(
+		(blogPostTag) => blogPostTag.blog_posts_id
+	);
+	
+	$: featuredPosts = blogPosts.filter(
+		(post) => featuredPostIds.includes(post.id)
+	);
+
+	$: console.log(featuredPosts)
+
+	console.log(featuredPostIds);
+
+	$: blogCards = featuredPosts?.map(({ title, slug, content }) => ({
 		title,
 		blurb: content,
 		link: `./${slug}`
-	}));
+	})) ?? [];
 </script>
 
 <div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
@@ -27,7 +40,7 @@
 	</div>
 	<div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-900 rounded-lg gap-8">
 		<h3 class="h3 prose dark:prose-invert">
-			<select class="select w-40" style="text-transform: capitalize" bind:value={featuredTag}>
+			<select class="select w-40" style="text-transform: capitalize" bind:value={featuredTag} on:change={() => {featuredTag = featuredTag}}>
 				{#each tags as {tag_name}}
 					<option value={tag_name} style="text-transform: capitalize">{tag_name}</option>
 				{/each}
