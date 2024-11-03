@@ -1,7 +1,8 @@
 import { cleanHtml, validateDateCreated, validateDateUpdated } from '$lib/model-utilities';
-import { object, pipe, string, uuid, array, type InferOutput, nullable } from 'valibot';
+import { object, pipe, string, uuid, array, type InferOutput, nullable, number } from 'valibot';
 
 export const BlogPost = object({
+	id: number(),
 	date_created: validateDateCreated,
 	date_updated: validateDateUpdated,
 	title: string(),
