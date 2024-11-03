@@ -41,7 +41,7 @@
 	<!-- Carousel -->
 	<div
 		bind:this={elemCarousel}
-		class="snap-x snap-mandatory scroll-smooth flex gap-2 pb-2 overflow-x-auto"
+		class="snap-x snap-mandatory scroll-smooth scrollbar-hidden flex gap-2 pb-2 overflow-x-auto"
 	>
 		{#each cards as card}
 			<a href={card.link} class="card shrink-0 snap-start" style="width: {cardWidth}">
