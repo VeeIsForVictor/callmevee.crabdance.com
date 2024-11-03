@@ -1,14 +1,14 @@
-import { cleanHtml, validateDateCreated, validateDateUpdated } from "$lib/model-utilities";
-import { object, pipe, string, uuid, array, type InferOutput } from "valibot";
+import { cleanHtml, validateDateCreated, validateDateUpdated } from '$lib/model-utilities';
+import { object, pipe, string, uuid, array, type InferOutput } from 'valibot';
 
 export const BlogPost = object({
-    date_created: validateDateCreated,
-    date_updated: validateDateUpdated,
-    title: string(),
-    content: pipe(string(), cleanHtml),
-    author: pipe(string(), uuid()),
-    slug: string()
-})
+	date_created: validateDateCreated,
+	date_updated: validateDateUpdated,
+	title: string(),
+	content: pipe(string(), cleanHtml),
+	author: pipe(string(), uuid()),
+	slug: string()
+});
 
 export const BlogPosts = array(BlogPost);
 
