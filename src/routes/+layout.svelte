@@ -9,8 +9,8 @@
 	import css from 'highlight.js/lib/languages/css';
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
-	import Background from '$lib/Background.svelte';
-	import NavBar from '$lib/NavBar.svelte';
+	import Background from '$lib/components/Background.svelte';
+	import NavBar from '$lib/components/NavBar.svelte';
 
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
