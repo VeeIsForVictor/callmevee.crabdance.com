@@ -8,6 +8,9 @@
 		link: string;
 	};
 
+	let maxBlurbLength = 100;
+	let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;
+
 	export let cards: carouselCard[];
 
 	let elemCarousel: HTMLDivElement;
@@ -43,7 +46,7 @@
 					<h3 class="h3">{card.title}</h3>
 				</header>
 				<footer class="card-footer prose dark:prose-invert">
-					<p>{@html card.blurb}</p>
+					<p>{@html blurbify(card.blurb)}</p>
 				</footer>
 			</a>
 		{/each}
