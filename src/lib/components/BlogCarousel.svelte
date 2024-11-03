@@ -37,7 +37,7 @@
 	<!-- Carousel -->
 	<div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex gap-2 pb-2 overflow-x-auto">
 		{#each cards as card}
-            <a href={card.link} class="card shrink-0 w-[28%] snap-start">
+            <a href={card.link} class="card shrink-0 w-[35%] snap-start">
                 <header class="card-header prose dark:prose-invert">
                     <!-- svelte-ignore a11y-missing-attribute -->
                     <h3 class="h3">{card.title}</h3>
