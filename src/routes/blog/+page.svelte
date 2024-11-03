@@ -6,8 +6,6 @@
 
     let { blog, blogPosts, tags } = data;
 
-    console.log(blogPosts)
-
     let blogCards: any[] = [];
 
     blogCards = blogPosts?.map(

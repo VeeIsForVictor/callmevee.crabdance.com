@@ -1,4 +1,8 @@
-<script lang="ts">    
+<script lang="ts">
+	import { ArrowLeft, ArrowRight } from "@steeze-ui/heroicons";
+	import { Icon } from "@steeze-ui/svelte-icon";
+
+    
     type carouselCard = { 
         title: string,
         blurb: string,
@@ -28,7 +32,7 @@
 <div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
 	<!-- Button: Left -->
 	<button type="button" class="btn-icon variant-filled" on:click={multiColumnLeft}>
-		
+		<Icon src={ArrowLeft}/>
 	</button>
 	<!-- Carousel -->
 	<div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex gap-2 pb-2 overflow-x-auto">
@@ -46,6 +50,6 @@
 	</div>
 	<!-- Button-Right -->
 	<button type="button" class="btn-icon variant-filled" on:click={multiColumnRight}>
-		<i class="fa-solid fa-arrow-right" />
+		<Icon src={ArrowRight}/>
 	</button>
 </div>
