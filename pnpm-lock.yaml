@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@directus/sdk':
+        specifier: ^18.0.0
+        version: 18.0.0
       highlight.js:
         specifier: 11.10.0
         version: 11.10.0
@@ -112,6 +115,10 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@directus/sdk@18.0.0':
+    resolution: {integrity: sha512-PREPeIKI1/EpvWxZHqWaRgL0HNccaauQm98sABBPMPwH3gCHfSz+sFJyugyx+MYHBiv2K5M8BCxF3MRCbAzljw==}
+    engines: {node: '>=18.0.0'}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -1676,6 +1683,8 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@directus/sdk@18.0.0': {}
 
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
