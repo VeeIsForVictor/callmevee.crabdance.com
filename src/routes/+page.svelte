@@ -1,6 +1,6 @@
-<head>
+<svelte:head>
 	<title>CallMeVee</title>
-</head>
+</svelte:head>
 
 <div class="container h-full mx-auto flex justify-center items-center prose dark:prose-invert">
 	<div class="space-y-5">
