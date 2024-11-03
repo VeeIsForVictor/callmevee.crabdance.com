@@ -6,10 +6,10 @@ import { readItems, readSingleton } from '@directus/sdk';
 import { parse } from 'valibot';
 
 export async function load({ fetch }) {
-    const directus = getDirectusInstance(fetch);
-    return {
-        blogPosts:  parse(BlogPosts, await directus.request(readItems('blog_posts'))),
-        blog:       parse(Blog, await directus.request(readSingleton('blog'))),
-        tags:       parse(Tags, await directus.request(readItems('tags')))
-    };
+	const directus = getDirectusInstance(fetch);
+	return {
+		blogPosts: parse(BlogPosts, await directus.request(readItems('blog_posts'))),
+		blog: parse(Blog, await directus.request(readSingleton('blog'))),
+		tags: parse(Tags, await directus.request(readItems('tags')))
+	};
 }
