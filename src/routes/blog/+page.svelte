@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import BlogCarousel from '$lib/components/BlogCarousel.svelte';
 
 	export let data;
 
-	let { blog, blogPosts, tags } = data;
+	let { blog, blogPosts } = data;
 
-	let blogCards: any[] = [];
+	let blogCards: {title: string, blurb: string, link: string}[] = [];
 
 	blogCards = blogPosts?.map(({ title, slug, content }) => ({
 		title,

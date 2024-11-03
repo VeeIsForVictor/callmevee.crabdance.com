@@ -40,7 +40,6 @@
 		{#each cards as card}
 			<a href={card.link} class="card shrink-0 w-[35%] snap-start">
 				<header class="card-header prose dark:prose-invert">
-					<!-- svelte-ignore a11y-missing-attribute -->
 					<h3 class="h3">{card.title}</h3>
 				</header>
 				<footer class="card-footer prose dark:prose-invert">
