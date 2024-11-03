@@ -22,10 +22,6 @@
 		(post) => featuredPostIds.includes(post.id)
 	);
 
-	$: console.log(featuredPosts)
-
-	console.log(featuredPostIds);
-
 	$: blogCards = featuredPosts?.map(({ title, slug, content }) => ({
 		title,
 		blurb: content,
