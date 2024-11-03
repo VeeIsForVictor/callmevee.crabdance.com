@@ -1,4 +1,4 @@
-<div class="background">
+<div class="background p-10">
 	<slot />
 	<li />
 	<li />
