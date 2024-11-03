@@ -41,10 +41,20 @@
 	<!-- Carousel -->
 	<div
 		bind:this={elemCarousel}
-		class="snap-x snap-mandatory scroll-smooth scrollbar-hidden flex gap-2 pb-2 overflow-x-auto"
+		class="snap-x snap-mandatory scroll-smooth scrollbar-hidden flex gap-2 pb-2 overflow-x-auto h-60"
 	>
+		{#if cards.length == 0}
+			<div class="flex flex-col items-center justify-center card shrink-0 snap-start w-[100%]">
+				<header class="card-header prose dark:prose-invert">
+					<h3 class="h3">No blog posts found for this tag</h3>
+				</header>
+				<footer class="card-footer prose dark:prose-invert">
+					<p>In the meantime, try another tag!</p>
+				</footer>
+			</div>
+		{/if}
 		{#each cards as card}
-			<a href={card.link} class="card shrink-0 snap-start" style="width: {cardWidth}">
+			<a href={card.link} class="card shrink-0 snap-start h-[100%]" style="width: {cardWidth}">
 				<header class="card-header prose dark:prose-invert">
 					<h3 class="h3">{card.title}</h3>
 				</header>
