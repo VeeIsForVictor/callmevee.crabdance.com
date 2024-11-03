@@ -9,7 +9,7 @@
         <h1 class="h1">{blog.headline}</h1>
         <p>{@html blog.subheadline}</p>
     </div>
-    <div class="container h-full w-max shadow-md p-8 bg-surface-900/10 rounded-lg border-2 border-surface-800">
+    <div class="h-full w-max shadow-md p-8 bg-surface-900 rounded-lg">
         <h3>Featured Posts</h3>
         <div class="flex flex-row align-center gap-4">
             {#each blogPosts as {title, slug}}
