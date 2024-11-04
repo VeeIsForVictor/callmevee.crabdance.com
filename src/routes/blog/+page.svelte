@@ -29,6 +29,10 @@
 	})) ?? [];
 </script>
 
+<svelte:head>
+	<title>Blog</title>
+</svelte:head>
+
 <div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
 	<div class="flex flex-col items-center prose dark:prose-invert">
 		<h1 class="h1">{blog.headline}</h1>

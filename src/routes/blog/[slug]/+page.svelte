@@ -2,6 +2,10 @@
     export let data;
 </script>
 
+<svelte:head>
+	<title>{data.title}</title>
+</svelte:head>
+
 <div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
 	<div class="flex flex-col items-center prose dark:prose-invert">
 		<h3 class="h3">{data.title}</h3>
