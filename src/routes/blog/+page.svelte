@@ -5,7 +5,7 @@
 
 	let { blog, blogPosts, blogPostsTags, tags } = data;
 
-	let featuredTag = "meta";
+	let featuredTag = "featured";
 
 	let blogCards: {title: string, blurb: string, link: string}[] = [];
 
