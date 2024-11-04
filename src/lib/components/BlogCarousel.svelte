@@ -14,8 +14,8 @@
 	let maxBlurbLength = 100;
 	let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;
 	
-	let maxCardsPerScroll = 4;
-	$: cardWidth = `${Math.round(100 / Math.min(maxCardsPerScroll, cards.length))}%`;
+	let maxCardsPerScroll = 3;
+	$: cardWidth = `${Math.round(95 / Math.min(maxCardsPerScroll, cards.length))}%`;
 	
 	let elemCarousel: HTMLDivElement;
 
