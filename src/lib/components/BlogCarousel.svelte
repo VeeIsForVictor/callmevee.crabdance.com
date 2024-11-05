@@ -15,7 +15,7 @@
 	let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;
 	
 	let maxCardsPerScroll = 3;
-	$: cardWidth = `${Math.round(95 / Math.min(maxCardsPerScroll, cards.length))}%`;
+	$: cardWidth = `${Math.round(100 / Math.min(maxCardsPerScroll, cards.length))}%`;
 	
 	let elemCarousel: HTMLDivElement;
 
@@ -42,7 +42,7 @@
 	<!-- Carousel -->
 	<div
 		bind:this={elemCarousel}
-		class="snap-x snap-mandatory scroll-smooth scrollbar-hidden flex gap-2 pb-2 overflow-x-auto h-60"
+		class="snap-x snap-mandatory scroll-smooth scrollbar-hidden flex gap-2 pb-2 px-4 overflow-x-auto h-60"
 	>
 		{#if cards.length == 0}
 			<div transition:blur class="flex flex-col items-center justify-center card shrink-0 snap-start w-[100%]">
