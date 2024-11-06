@@ -38,7 +38,7 @@
 		<h1 class="h1">{blog.headline}</h1>
 		<p>{@html blog.subheadline}</p>
 	</div>
-	<div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-900 rounded-lg gap-8">
+	<div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-0 dark:bg-surface-900 rounded-lg gap-8">
 		<h3 class="h3 prose dark:prose-invert">
 			<select class="select w-40" style="text-transform: capitalize" bind:value={featuredTag} on:change={() => {featuredTag = featuredTag}}>
 				{#each tags as {tag_name}}
