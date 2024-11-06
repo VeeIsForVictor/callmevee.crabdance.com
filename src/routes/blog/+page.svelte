@@ -7,7 +7,7 @@
 
 	let featuredTag = "featured";
 
-	let blogCards: {title: string, blurb: string, link: string}[] = [];
+	let blogCards: {title: string, content: string, link: string}[] = [];
 
 	let featuredPostIds = [];
 	let featuredPosts = [];
@@ -24,7 +24,7 @@
 
 	$: blogCards = featuredPosts?.map(({ title, slug, content }) => ({
 		title,
-		blurb: content,
+		content,
 		link: `./${slug}`
 	})) ?? [];
 </script>

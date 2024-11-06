@@ -2,14 +2,9 @@
 	import { ArrowLeft, ArrowRight } from '@steeze-ui/heroicons';
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { blur } from 'svelte/transition';
+	import BlogCard, { type Post } from './BlogCard.svelte';
 
-	type carouselCard = {
-		title: string;
-		blurb: string;
-		link: string;
-	};
-
-	export let cards: carouselCard[];
+	export let cards: Post[];
 	
 	let maxBlurbLength = 100;
 	let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;
@@ -55,15 +50,7 @@
 			</div>
 		{/if}
 		{#each cards as card}
-			<a transition:blur href={card.link} class="card shrink-0 snap-start h-[100%] py-2" style="width: {cardWidth}">
-				<header class="card-header prose dark:prose-invert">
-					<h3 class="h3">{card.title}</h3>
-				</header>
-				<hr class="border-2 my-4">
-				<footer class="card-footer prose dark:prose-invert">
-					<p>{@html blurbify(card.blurb)}</p>
-				</footer>
-			</a>
+			<BlogCard post={card} style="width: {cardWidth}"/>
 		{/each}
 	</div>
 	<!-- Button-Right -->
