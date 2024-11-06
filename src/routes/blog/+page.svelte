@@ -62,7 +62,7 @@
 		
 		<!-- Posts Grid -->
 		<h3 class="h3 prose dark:prose-invert">Blog Posts</h3>
-		<div class="grid grid-cols-4 gap-4">
+		<div class="grid grid-cols-3 gap-4">
 			{#each blogCards as post}
 				<BlogCard {post}/>
 			{/each}
