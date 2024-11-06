@@ -42,7 +42,7 @@
 	<!-- Carousel -->
 	<div
 		bind:this={elemCarousel}
-		class="snap-x snap-mandatory scroll-smooth scrollbar-hidden flex gap-2 pb-2 px-4 overflow-x-auto h-60"
+		class="snap-x snap-mandatory scroll-smooth scrollbar-hidden flex gap-2 pb-2 px-4 overflow-x-auto h-80"
 	>
 		{#if cards.length == 0}
 			<div transition:blur class="flex flex-col items-center justify-center card shrink-0 snap-start w-[100%]">
@@ -55,10 +55,11 @@
 			</div>
 		{/if}
 		{#each cards as card}
-			<a transition:blur href={card.link} class="card shrink-0 snap-start h-[100%]" style="width: {cardWidth}">
+			<a transition:blur href={card.link} class="card shrink-0 snap-start h-[100%] py-2" style="width: {cardWidth}">
 				<header class="card-header prose dark:prose-invert">
 					<h3 class="h3">{card.title}</h3>
 				</header>
+				<hr class="border-2 my-4">
 				<footer class="card-footer prose dark:prose-invert">
 					<p>{@html blurbify(card.blurb)}</p>
 				</footer>
