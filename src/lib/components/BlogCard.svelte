@@ -13,7 +13,7 @@
 
     export let maxBlurbLength = 100;
 
-    export let style;
+    export let style = null;
 
     // Handle truncating post.content to fit the blurb length
     let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { Post } from '$lib/components/BlogCard.svelte';
+	import BlogCard from '$lib/components/BlogCard.svelte';
 	import BlogCarousel from '$lib/components/BlogCarousel.svelte';
 
 	export let data;
@@ -7,7 +9,8 @@
 
 	let featuredTag = "featured";
 
-	let blogCards: {title: string, content: string, link: string}[] = [];
+	let featuredBlogCards: Post[] = [];
+	let blogCards: Post[] = [];
 
 	let featuredPostIds = [];
 	let featuredPosts = [];
@@ -22,7 +25,13 @@
 		(post) => featuredPostIds.includes(post.id)
 	);
 
-	$: blogCards = featuredPosts?.map(({ title, slug, content }) => ({
+	$: featuredBlogCards = featuredPosts?.map(({ title, slug, content }) => ({
+		title,
+		content,
+		link: `./${slug}`
+	})) ?? [];
+
+	blogCards = blogPosts.map(({ title, slug, content }) => ({
 		title,
 		content,
 		link: `./${slug}`
@@ -49,9 +58,14 @@
 				{/each}
 			</select> Posts
 		</h3>
-		<BlogCarousel cards={blogCards} />
+		<BlogCarousel cards={featuredBlogCards} />
 		
 		<!-- Posts Grid -->
-
+		<h3 class="h3 prose dark:prose-invert">Blog Posts</h3>
+		<div class="grid grid-cols-4 gap-4">
+			{#each blogCards as post}
+				<BlogCard {post}/>
+			{/each}
+		</div>
 	</div>
 </div>
