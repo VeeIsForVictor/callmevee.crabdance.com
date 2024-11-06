@@ -2,7 +2,7 @@
 	<title>CallMeVee</title>
 </svelte:head>
 
-<div class="space-y-5">
+<div class="space-y-5 prose dark:prose-invert">
 	<h1 class="h1">Hello, world!</h1>
 	<p>
 		I'm Victor and this is my personal website's WIP front page. The fact you can see this means my
