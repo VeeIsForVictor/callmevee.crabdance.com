@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ArrowLeft, ArrowRight } from '@steeze-ui/heroicons';
 	import { Icon } from '@steeze-ui/svelte-icon';
-	import { blur, crossfade, fade } from 'svelte/transition';
+	import { blur } from 'svelte/transition';
 
 	type carouselCard = {
 		title: string;
