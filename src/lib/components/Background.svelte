@@ -1,5 +1,4 @@
 <div class="background p-10 flex flex-col">
-	<slot />
 	<li />
 	<li />
 	<li />

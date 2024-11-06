@@ -28,12 +28,11 @@
 	}
 </script>
 
-<Background>
-	<header class="sticky inset-x-0 top-0 z-50 items-center justify-center p-3 lg:px-16">
-		<NavBar />
-	</header>
+<Background />
+<header class="sticky inset-x-0 top-0 z-50 items-center justify-center p-3 lg:px-16">
+	<NavBar />
+</header>
 
-	<div class="container w-full h-full mx-auto flex justify-center items-center">
-		<slot />
-	</div>
-</Background>
+<div class="container w-full h-full mx-auto flex justify-center items-center">
+	<slot />
+</div>
