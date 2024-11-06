@@ -33,6 +33,6 @@
 	<NavBar />
 </header>
 
-<div class="container w-full h-full mx-auto flex justify-center items-center">
+<div class="container w-full h-screen mx-auto flex justify-center items-center">
 	<slot />
 </div>
