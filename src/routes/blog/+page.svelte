@@ -44,7 +44,7 @@
 
 <div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
 	<!-- Hero -->
-	<div class="flex flex-col items-center prose dark:prose-invert">
+	<div class="flex flex-col items-center justify-center prose dark:prose-invert">
 		<h1 class="h1">{blog.headline}</h1>
 		<p>{@html blog.subheadline}</p>
 	</div>
