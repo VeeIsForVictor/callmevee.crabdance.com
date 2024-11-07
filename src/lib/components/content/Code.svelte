@@ -5,6 +5,6 @@
     export let data: Code;
 </script>
 
-<CodeBlock>
+<CodeBlock language="html">
     {data.code}
 </CodeBlock>

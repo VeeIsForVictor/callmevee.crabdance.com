@@ -4,9 +4,9 @@
 </script>
 
 {#if data.style=="ordered"}
-    <ol>Nestedlist
+    <ol>
         {#each data.items as item}
             <li>{item.content}</li>
         {/each}
     </ol>
-{/if}Nestedlist
+{/if}

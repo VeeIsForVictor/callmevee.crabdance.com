@@ -4,5 +4,5 @@
 </script>
 
 <p class="prose dark:prose-invert">
-    {data.text}Paragraph
-</p>Paragraph
+    {data.text}
+</p>
