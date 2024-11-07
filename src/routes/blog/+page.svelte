@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { PUBLIC_APIURL } from '$env/static/public';
 	import type { Post } from '$lib/components/BlogCard.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import BlogCarousel from '$lib/components/BlogCarousel.svelte';
@@ -6,6 +7,11 @@
 	export let data;
 
 	let { blog, blogPosts, blogPostsTags, tags } = data;
+
+	let heroBackgroundHeight = 600;
+	let heroBackgroundWidth = 1200;
+	let heroBackgroundURL = `${PUBLIC_APIURL}/assets/${blog.hero_background}?width=${heroBackgroundWidth}&height=${heroBackgroundHeight}&fit=cover&format=webp`;
+	console.log(heroBackgroundURL)
 
 	let featuredTag = "featured";
 
@@ -44,9 +50,12 @@
 
 <div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
 	<!-- Hero -->
-	<div class="flex flex-col items-center justify-center prose dark:prose-invert">
-		<h1 class="h1">{blog.headline}</h1>
-		<p>{@html blog.subheadline}</p>
+	<div class="flex w-full justify-center items-center" style="height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px">
+		<div class="opacity-35 rounded-3xl shadow-lg" style="position: absolute; background-image: url({heroBackgroundURL}); height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px; z-index: -5;"/>
+		<div class="flex flex-col items-center justify-center prose dark:prose-invert">
+			<h1 class="h1">{blog.headline}</h1>
+			<p>{@html blog.subheadline}</p>
+		</div>
 	</div>
 
 	<div class="flex flex-col h-auto w-full shadow-md p-8 bg-surface-0 dark:bg-surface-900 rounded-lg gap-8">
