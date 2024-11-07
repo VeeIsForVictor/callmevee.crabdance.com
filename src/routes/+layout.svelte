@@ -40,7 +40,7 @@
 </div>
   
 <Footer>
-	<div class="sm:flex sm:items-center sm:justify-between mx-1 bg-surface-900">
+	<div class="sm:flex sm:items-center sm:justify-between mx-1 bg-surface-100 dark:bg-surface-900">
 	<FooterCopyright href="/" by="Victor Edwin Reyes" year={new Date().getFullYear()} />
 	<FooterLinkGroup ulClass="flex flex-wrap items-center py-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 gap-6 mx-2">
 		<FooterLink href="/">About</FooterLink>
