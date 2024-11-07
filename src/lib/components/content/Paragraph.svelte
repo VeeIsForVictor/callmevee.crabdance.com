@@ -1,9 +1,8 @@
 <script lang="ts">
-	import type { paragraph } from "$lib/models/content";
-
-    export let data: paragraph;
+	import type { Paragraph } from "$lib/models/content";
+    export let data: Paragraph;
 </script>
 
 <p class="prose dark:prose-invert">
-    {data.text}
-</p>
+    {data.text}Paragraph
+</p>Paragraph

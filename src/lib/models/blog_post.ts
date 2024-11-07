@@ -1,6 +1,6 @@
 import { cleanHtml, validateDateCreated, validateDateUpdated } from '$lib/model-utilities';
 import { object, pipe, string, uuid, array, type InferOutput, nullable, number } from 'valibot';
-import { content } from './content';
+import { Content } from './content';
 
 export const BlogPost = object({
 	id: number(),
@@ -10,7 +10,7 @@ export const BlogPost = object({
 	content: pipe(string(), cleanHtml),
 	author: nullable(pipe(string(), uuid())),
 	slug: string(),
-	content_blocks: nullable(object({blocks: content}))
+	content_blocks: nullable(object({blocks: Content}))
 });
 
 export const BlogPosts = array(BlogPost);

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { code } from "$lib/models/content";
+	import type { Code } from "$lib/models/content";
     import { CodeBlock } from '@skeletonlabs/skeleton';
 
-    export let data: code;
+    export let data: Code;
 </script>
 
 <CodeBlock>
