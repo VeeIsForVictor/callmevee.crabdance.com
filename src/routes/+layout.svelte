@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
-
+	
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
 	import 'highlight.js/styles/github-dark.css';
@@ -11,7 +11,8 @@
 	import typescript from 'highlight.js/lib/languages/typescript';
 	import Background from '$lib/components/Background.svelte';
 	import NavBar from '$lib/components/NavBar.svelte';
-
+	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
+	
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
 	hljs.registerLanguage('javascript', javascript);
@@ -26,6 +27,7 @@
 		beforeNavigate(() => posthog.capture('$pageleave'));
 		afterNavigate(() => posthog.capture('$pageview'));
 	}
+
 </script>
 
 <Background />
@@ -33,6 +35,16 @@
 	<NavBar />
 </header>
 
-<div class="container w-full h-screen mx-auto flex justify-center items-center">
+<div class="container w-full h-auto mx-auto flex justify-center items-center">
 	<slot />
 </div>
+  
+<Footer>
+	<div class="sm:flex sm:items-center sm:justify-between mx-1 bg-surface-900">
+	<FooterCopyright href="/" by="Victor Edwin Reyes" year={new Date().getFullYear()} />
+	<FooterLinkGroup ulClass="flex flex-wrap items-center py-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 gap-6 mx-2">
+		<FooterLink href="/">About</FooterLink>
+		<!-- Contact Links down here -->
+	</FooterLinkGroup>
+	</div>
+</Footer>
