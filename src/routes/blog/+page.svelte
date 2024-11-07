@@ -49,7 +49,7 @@
 		<p>{@html blog.subheadline}</p>
 	</div>
 
-	<div class="flex flex-col h-full w-full shadow-md p-8 bg-surface-0 dark:bg-surface-900 rounded-lg gap-8">
+	<div class="flex flex-col h-auto w-full shadow-md p-8 bg-surface-0 dark:bg-surface-900 rounded-lg gap-8">
 		<!-- Featureds Carousel -->
 		<h3 class="h3 prose dark:prose-invert">
 			<select class="select w-40" style="text-transform: capitalize" bind:value={featuredTag} on:change={() => {featuredTag = featuredTag}}>
@@ -62,7 +62,7 @@
 		
 		<!-- Posts Grid -->
 		<h3 class="h3 prose dark:prose-invert">Blog Posts</h3>
-		<div class="grid grid-cols-3 gap-4">
+		<div class="grid grid-cols-3 gap-4 h-auto">
 			{#each blogCards as post}
 				<BlogCard {post}/>
 			{/each}
