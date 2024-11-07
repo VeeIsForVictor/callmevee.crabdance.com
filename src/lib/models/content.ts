@@ -9,7 +9,7 @@ export const Header = object({
 
 // paragraph = { text }
 export const Paragraph = object({
-    text: string()
+    text: pipe(string(), cleanHtml)
 })
 
 //  nestedlistItems = { content, items }

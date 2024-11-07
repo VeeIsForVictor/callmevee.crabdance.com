@@ -3,6 +3,6 @@
     export let data: Paragraph;
 </script>
 
-<p class="prose dark:prose-invert">
-    {data.text}
+<p class="prose dark:prose-invert !max-w-none">
+    {@html data.text}
 </p>
