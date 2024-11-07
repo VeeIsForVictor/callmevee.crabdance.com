@@ -50,8 +50,8 @@
 
 <div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
 	<!-- Hero -->
-	<div class="flex w-full justify-center items-center" style="height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px">
-		<div class="opacity-35 rounded-3xl shadow-lg" style="position: absolute; background-image: url({heroBackgroundURL}); height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px; z-index: -5;"/>
+	<div class="flex w-full justify-center items-center bg-white dark:bg-slate-800 rounded-3xl" style="height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px">
+		<div class="opacity-35 rounded-3xl shadow-lg" style="position: absolute; background-image: url({heroBackgroundURL}); height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px; z-index: 0;"/>
 		<div class="flex flex-col items-center justify-center prose dark:prose-invert">
 			<h1 class="h1">{blog.headline}</h1>
 			<p>{@html blog.subheadline}</p>
