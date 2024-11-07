@@ -15,7 +15,7 @@
     {#if heroBackgroundURL}
         <div class="opacity-30 rounded-3xl shadow-lg" style="position: absolute; background-image: url({heroBackgroundURL}); height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px; z-index: -9;"/>
     {:else}
-        <div class="animated-background bg-gradient-to-r from-slate-400 via-blue-400 to-surface-500 dark:from-slate-800 dark:via-blue-950 dark:to-surface-900 rounded-3xl shadow-lg" style="position: absolute; height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px; z-index: -9;"/>
+        <div class="animated-background bg-gradient-to-r from-slate-100 via-blue-400 to-surface-500 dark:from-slate-800 dark:via-blue-950 dark:to-surface-900 rounded-3xl shadow-lg" style="position: absolute; height: {heroBackgroundHeight}px; width: {heroBackgroundWidth}px; z-index: -9;"/>
     {/if}
     <div class="flex flex-col items-center justify-center prose dark:prose-invert">
         <h1 class="h1">{heroHeadline}</h1>
