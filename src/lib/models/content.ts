@@ -1,5 +1,5 @@
 import { cleanHtml } from "$lib/model-utilities"
-import { array, literal, nullable, number, object, picklist, pipe, string, unknown, variant } from "valibot"
+import { array, literal, nullable, number, object, picklist, pipe, string, unknown, variant, type InferOutput } from "valibot"
 
 // header = { text, level }
 export const header = object({
@@ -32,7 +32,7 @@ export const code = object({
 // quote = { text, caption }
 export const quote = object({
     text: string("Expecting text here"),
-    caption: string()
+    caption: nullable(string())
 })
 
 // raw = { html }
@@ -68,3 +68,10 @@ export const block = variant("type", [
 ])
 
 export const content = array(block)
+
+export type header = InferOutput<typeof header>;
+export type paragraph = InferOutput<typeof paragraph>;
+export type nestedlist = InferOutput<typeof nestedlist>;
+export type code = InferOutput<typeof code>;
+export type quote = InferOutput<typeof quote>;
+export type raw = InferOutput<typeof raw>;
