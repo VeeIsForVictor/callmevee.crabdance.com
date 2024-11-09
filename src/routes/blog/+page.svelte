@@ -27,15 +27,15 @@
 		(post) => featuredPostIds.includes(post.id)
 	);
 
-	$: featuredBlogCards = featuredPosts?.map(({ title, slug, content }) => ({
+	$: featuredBlogCards = featuredPosts?.map(({ title, slug, post_content }) => ({
 		title,
-		content,
+		content: post_content,
 		link: `./${slug}`
 	})) ?? [];
 
-	blogCards = blogPosts.map(({ title, slug, content }) => ({
+	blogCards = blogPosts.map(({ title, slug, post_content }) => ({
 		title,
-		content,
+		content: post_content,
 		link: `./${slug}`
 	})) ?? [];
 </script>
