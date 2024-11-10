@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { assert } from '$lib/assert';
 	import Hero from '$lib/components/Hero.svelte';
-	import type { BlogPost } from '$lib/models/blog_post';
-	
+		
     export let data;
 	let { post, author } = data;
 	assert(post && author)
