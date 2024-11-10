@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { assert } from '$lib/assert';
 	import Hero from '$lib/components/Hero.svelte';
-		
+
     export let data;
-	let { post, author } = data;
-	assert(post && author)
+	let { post, author, blogPostTags } = data;
+	assert(post && author && blogPostTags)
 
 	let { title, post_content, date_created, date_updated } = post;
 	assert(date_updated !== null)
@@ -27,6 +27,10 @@
 				<h5>{new Date(date_created).toLocaleDateString()}</h5>
 				<h4>Date updated:</h4>
 				<h5>{new Date(date_updated).toLocaleDateString()}</h5>
+				<h4>Tags</h4>
+				{#each blogPostTags as {tags_tag_name: name}}
+					<h5 class="badge variant-filled-primary mx-1">{name}</h5>
+				{/each}
 			</div>
 		</div>
 		<div class="flex flex-col h-full w-9/12 !max-w-none shadow-md p-8 bg-surface-100 dark:bg-surface-900 rounded-lg gap-4">
