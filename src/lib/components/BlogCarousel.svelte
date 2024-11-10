@@ -6,10 +6,8 @@
 
 	export let cards: Post[];
 	
-	let maxBlurbLength = 100;
-	let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;
-	
 	let maxCardsPerScroll = 3;
+	let maxBlurbLength = Math.round(350 / Math.min(maxCardsPerScroll, cards.length));
 	$: cardWidth = `${Math.round(100 / Math.min(maxCardsPerScroll, cards.length))}%`;
 	
 	let elemCarousel: HTMLDivElement;
@@ -50,7 +48,7 @@
 			</div>
 		{/if}
 		{#each cards as card}
-			<BlogCard post={card} style="width: {cardWidth}"/>
+			<BlogCard post={card} style="width: {cardWidth}" {maxBlurbLength}/>
 		{/each}
 	</div>
 	<!-- Button-Right -->
