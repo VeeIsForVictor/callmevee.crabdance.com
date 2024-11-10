@@ -22,13 +22,21 @@
 	import posthog from 'posthog-js';
 	import { browser } from '$app/environment';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
+	import type { Settings } from '$lib/models/settings';
 
 	if (browser) {
 		beforeNavigate(() => posthog.capture('$pageleave'));
 		afterNavigate(() => posthog.capture('$pageview'));
 	}
 
+	export let data;
+	let settings = data.settings;
+
 </script>
+
+<svelte:head>
+	<link rel="icon" href={settings.public_favicon} />
+</svelte:head>
 
 <Background />
 <header class="sticky inset-x-0 top-0 z-50 items-center justify-center p-3 lg:px-16">
