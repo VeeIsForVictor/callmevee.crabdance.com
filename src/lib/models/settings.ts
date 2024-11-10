@@ -1,7 +1,7 @@
 import { assetURL } from "$lib/model-utilities";
-import { hexColor, object, pipe, string, url } from "valibot";
+import { hexColor, object, pipe, string, url, type InferOutput } from "valibot";
 
-export const settings = object({
+export const Settings = object({
     project_name: string(),
     project_url: pipe(string(), url()),
     project_logo: pipe(string(), assetURL),
@@ -10,3 +10,5 @@ export const settings = object({
     public_foreground: pipe(string(), assetURL),
     public_background: pipe(string(), assetURL)
 })
+
+export type Settings = InferOutput<typeof Settings>;
