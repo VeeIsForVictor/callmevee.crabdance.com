@@ -3,10 +3,14 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import type { BlogPost } from '$lib/models/blog_post';
 	
-    export let data: BlogPost;
-	let { title, post_content, date_created, date_updated } = data;
+    export let data;
+	let { post, author } = data;
+	assert(post && author)
 
+	let { title, post_content, date_created, date_updated } = post;
 	assert(date_updated !== null)
+
+	let { first_name, last_name } = author;
 </script>
 
 <svelte:head>
@@ -18,6 +22,8 @@
 	<div class="flex flex-row gap-4">
 		<div class="w-3/12">
 			<div class="w-full prose dark:prose-invert bg-surface-100 dark:bg-surface-900 rounded-lg p-8">
+				<h4>Author:</h4>
+				<h5>{first_name} {last_name}</h5>
 				<h4>Date created:</h4>
 				<h5>{new Date(date_created).toLocaleDateString()}</h5>
 				<h4>Date updated:</h4>
