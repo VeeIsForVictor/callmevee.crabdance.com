@@ -40,7 +40,7 @@
 
 <Background />
 <header class="sticky inset-x-0 top-0 z-50 items-center justify-center p-3 lg:px-16">
-	<NavBar />
+	<NavBar projectName={settings.project_name}/>
 </header>
 
 <div class="container w-full h-auto mx-auto flex justify-center items-center min-h-screen">
