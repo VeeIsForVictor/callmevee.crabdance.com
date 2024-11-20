@@ -3,7 +3,7 @@
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { blur } from 'svelte/transition';
 	import BlogCard, { type Post } from './BlogCard.svelte';
-
+	
 	interface Props {
 		cards: Post[];
 	}
@@ -14,8 +14,8 @@
 	let maxBlurbLength = Math.round(350 / Math.min(maxCardsPerScroll, cards.length));
 	let cardWidth = $derived(`${Math.round(100 / Math.min(maxCardsPerScroll, cards.length))}%`);
 	
-	let elemCarousel: HTMLDivElement = $state();
-
+	let elemCarousel: HTMLDivElement = $state(new HTMLDivElement());
+	
 	function multiColumnLeft(): void {
 		let x = elemCarousel.scrollWidth;
 		if (elemCarousel.scrollLeft !== 0) x = elemCarousel.scrollLeft - elemCarousel.clientWidth;
@@ -33,7 +33,7 @@
 
 <div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
 	<!-- Button: Left -->
-	<button type="button" class="btn-icon variant-filled" on:click={multiColumnLeft}>
+	<button type="button" class="btn-icon variant-filled" onclick={multiColumnLeft}>
 		<Icon src={ArrowLeft} />
 	</button>
 	<!-- Carousel -->
@@ -56,7 +56,7 @@
 		{/each}
 	</div>
 	<!-- Button-Right -->
-	<button type="button" class="btn-icon variant-filled" on:click={multiColumnRight}>
+	<button type="button" class="btn-icon variant-filled" onclick={multiColumnRight}>
 		<Icon src={ArrowRight} />
 	</button>
 </div>
