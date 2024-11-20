@@ -4,7 +4,7 @@
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
 	import 'highlight.js/styles/github-dark.css';
-	import { storeHighlightJs } from '@skeletonlabs/skeleton';
+	import { Drawer, initializeStores, storeHighlightJs } from '@skeletonlabs/skeleton';
 	import xml from 'highlight.js/lib/languages/xml'; // for HTML
 	import css from 'highlight.js/lib/languages/css';
 	import javascript from 'highlight.js/lib/languages/javascript';
@@ -12,7 +12,9 @@
 	import Background from '$lib/components/Background.svelte';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
-	
+
+	initializeStores()
+		
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
 	hljs.registerLanguage('javascript', javascript);
@@ -22,8 +24,7 @@
 	import posthog from 'posthog-js';
 	import { browser } from '$app/environment';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
-	import type { Settings } from '$lib/models/settings';
-
+	
 	if (browser) {
 		beforeNavigate(() => posthog.capture('$pageleave'));
 		afterNavigate(() => posthog.capture('$pageview'));
@@ -38,8 +39,11 @@
 	<link rel="icon" href={settings.public_favicon} />
 </svelte:head>
 
+<Drawer>
+	
+</Drawer>
 <Background />
-<header class="sticky inset-x-0 top-0 z-50 items-center justify-center p-3 lg:px-16">
+<header class="sticky inset-x-0 top-0 z-30 items-center justify-center p-3 lg:px-16">
 	<NavBar projectName={settings.project_name}/>
 </header>
 
