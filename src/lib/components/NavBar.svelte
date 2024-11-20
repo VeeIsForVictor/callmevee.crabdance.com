@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 
-	export let projectName: string = "";
+	interface Props {
+		projectName?: string;
+	}
+
+	let { projectName = "" }: Props = $props();
 </script>
 
 <div>

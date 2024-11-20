@@ -1,37 +1,45 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { PUBLIC_APIURL } from '$env/static/public';
 	import type { Post } from '$lib/components/BlogCard.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import BlogCarousel from '$lib/components/BlogCarousel.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 
-	export let data;
+	let { data } = $props();
 
 	let { blog, blogPosts, blogPostsTags, tags } = data;
 
-	let featuredTag = "featured";
+	let featuredTag = $state("featured");
 
-	let featuredBlogCards: Post[] = [];
-	let blogCards: Post[] = [];
+	let featuredBlogCards: Post[] = $state([]);
+	let blogCards: Post[] = $state([]);
 
-	let featuredPostIds = [];
-	let featuredPosts = [];
+	let featuredPostIds = $state([]);
+	let featuredPosts = $state([]);
 
-	$: featuredPostIds = blogPostsTags.filter(
-		(blogPostTag) => blogPostTag.tags_tag_name === featuredTag
-	).map(
-		(blogPostTag) => blogPostTag.blog_posts_id
-	);
+	run(() => {
+		featuredPostIds = blogPostsTags.filter(
+			(blogPostTag) => blogPostTag.tags_tag_name === featuredTag
+		).map(
+			(blogPostTag) => blogPostTag.blog_posts_id
+		);
+	});
 	
-	$: featuredPosts = blogPosts.filter(
-		(post) => featuredPostIds.includes(post.id)
-	);
+	run(() => {
+		featuredPosts = blogPosts.filter(
+			(post) => featuredPostIds.includes(post.id)
+		);
+	});
 
-	$: featuredBlogCards = featuredPosts?.map(({ title, slug, post_content }) => ({
-		title,
-		content: post_content,
-		link: `./${slug}`
-	})) ?? [];
+	run(() => {
+		featuredBlogCards = featuredPosts?.map(({ title, slug, post_content }) => ({
+			title,
+			content: post_content,
+			link: `./${slug}`
+		})) ?? [];
+	});
 
 	blogCards = blogPosts.map(({ title, slug, post_content }) => ({
 		title,
@@ -51,7 +59,7 @@
 	<div class="flex flex-col h-auto w-full shadow-md p-8 bg-surface-0 dark:bg-surface-900 rounded-lg gap-8">
 		<!-- Featureds Carousel -->
 		<h3 class="h3 prose dark:prose-invert">
-			<select class="select w-40" style="text-transform: capitalize" bind:value={featuredTag} on:change={() => {featuredTag = featuredTag}}>
+			<select class="select w-40" style="text-transform: capitalize" bind:value={featuredTag} onchange={() => {featuredTag = featuredTag}}>
 				{#each tags as {tag_name}}
 					<option value={tag_name} style="text-transform: capitalize">{tag_name}</option>
 				{/each}

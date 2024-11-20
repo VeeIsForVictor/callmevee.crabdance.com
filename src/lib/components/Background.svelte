@@ -1,17 +1,17 @@
 <div class="background p-10 flex flex-col">
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
-	<li />
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
 </div>
 
 <style>
@@ -40,11 +40,11 @@
 		overflow: hidden;
 	}
 
-	.background:where([data-mode='dark']) {
+	.background:where(:global([data-mode='dark'])) {
 		background: theme('colors.surface.900');
 	}
 
-	.background:where([data-mode*='dark']) {
+	.background:where(:global([data-mode*='dark'])) {
 		background: theme('colors.surface.100');
 	}
 

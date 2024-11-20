@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
     export type Post = {
 		title: string;
 		content: null | string;
@@ -7,18 +7,26 @@
 </script>
 
 <script lang="ts">
+    import { run } from 'svelte/legacy';
+
     import { blur } from 'svelte/transition';
 
-    export let post: Post;
 
-    export let maxBlurbLength = 100;
 
-    export let style = "";
+    interface Props {
+        post: Post;
+        maxBlurbLength?: number;
+        style?: string;
+    }
+
+    let { post = $bindable(), maxBlurbLength = 100, style = "" }: Props = $props();
 
     // Handle truncating post.content to fit the blurb length
     let blurbify = (input: string) => input.length <= 100 ? input : `${input.slice(0, maxBlurbLength - 4)} ...`;
 
-    $: post.content = blurbify(post.content ?? "")
+    run(() => {
+        post.content = blurbify(post.content ?? "")
+    });
 </script>
 
 <a transition:blur href={post.link} class="card shrink-0 snap-start h-[100%] py-2" {style}>

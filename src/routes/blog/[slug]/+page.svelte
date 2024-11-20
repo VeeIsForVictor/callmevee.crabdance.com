@@ -2,7 +2,7 @@
 	import { assert } from '$lib/assert';
 	import Hero from '$lib/components/Hero.svelte';
 
-    export let data;
+	let { data } = $props();
 	let { post, author, blogPostTags } = data;
 	assert(post && author && blogPostTags)
 

@@ -4,13 +4,17 @@
 	import { blur } from 'svelte/transition';
 	import BlogCard, { type Post } from './BlogCard.svelte';
 
-	export let cards: Post[];
+	interface Props {
+		cards: Post[];
+	}
+
+	let { cards }: Props = $props();
 	
 	let maxCardsPerScroll = 3;
 	let maxBlurbLength = Math.round(350 / Math.min(maxCardsPerScroll, cards.length));
-	$: cardWidth = `${Math.round(100 / Math.min(maxCardsPerScroll, cards.length))}%`;
+	let cardWidth = $derived(`${Math.round(100 / Math.min(maxCardsPerScroll, cards.length))}%`);
 	
-	let elemCarousel: HTMLDivElement;
+	let elemCarousel: HTMLDivElement = $state();
 
 	function multiColumnLeft(): void {
 		let x = elemCarousel.scrollWidth;

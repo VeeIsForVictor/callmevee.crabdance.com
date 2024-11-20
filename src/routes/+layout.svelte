@@ -29,7 +29,7 @@
 		afterNavigate(() => posthog.capture('$pageview'));
 	}
 
-	export let data;
+	let { data, children } = $props();
 	let settings = data.settings;
 
 </script>
@@ -44,7 +44,7 @@
 </header>
 
 <div class="container w-full h-auto mx-auto flex justify-center items-center min-h-screen">
-	<slot />
+	{@render children?.()}
 </div>
   
 <Footer>
