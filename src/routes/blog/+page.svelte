@@ -13,33 +13,29 @@
 
 	let featuredTag = $state("featured");
 
-	let featuredBlogCards: Post[] = $state([]);
 	let blogCards: Post[] = $state([]);
 
-	let featuredPostIds = $state([]);
-	let featuredPosts = $state([]);
-
-	run(() => {
-		featuredPostIds = blogPostsTags.filter(
+	let featuredPostIds = $state(
+		blogPostsTags.filter(
 			(blogPostTag) => blogPostTag.tags_tag_name === featuredTag
 		).map(
 			(blogPostTag) => blogPostTag.blog_posts_id
-		);
-	});
-	
-	run(() => {
-		featuredPosts = blogPosts.filter(
-			(post) => featuredPostIds.includes(post.id)
-		);
-	});
+		)
+	);
 
-	run(() => {
-		featuredBlogCards = featuredPosts?.map(({ title, slug, post_content }) => ({
+	let featuredPosts = $derived(
+		blogPosts.filter(
+			(post) => featuredPostIds.includes(post.id)
+		)
+	);
+
+	let featuredBlogCards: Post[] = $derived(
+		featuredPosts?.map(({ title, slug, post_content }) => ({
 			title,
 			content: post_content,
 			link: `./${slug}`
-		})) ?? [];
-	});
+		})) ?? []
+	);
 
 	blogCards = blogPosts.map(({ title, slug, post_content }) => ({
 		title,
