@@ -60,7 +60,7 @@
 	<NavBar projectName={settings.project_name}/>
 </header>
 
-<div class="container w-full h-auto mx-auto flex justify-center items-center min-h-screen">
+<div class="container w-full h-auto mx-auto p-4 flex justify-center items-center min-h-screen">
 	{@render children?.()}
 </div>
   
