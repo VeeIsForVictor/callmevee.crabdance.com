@@ -14,7 +14,7 @@
 	let maxBlurbLength = Math.round(350 / Math.min(maxCardsPerScroll, cards.length));
 	let cardWidth = $derived(`${Math.round(100 / Math.min(maxCardsPerScroll, cards.length))}%`);
 	
-	let elemCarousel: HTMLDivElement = $state(new HTMLDivElement());
+	let elemCarousel: any;
 	
 	function multiColumnLeft(): void {
 		let x = elemCarousel.scrollWidth;
