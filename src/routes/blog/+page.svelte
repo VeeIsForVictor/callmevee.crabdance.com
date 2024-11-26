@@ -15,7 +15,7 @@
 
 	let blogCards: Post[] = $state([]);
 
-	let featuredPostIds = $state(
+	let featuredPostIds = $derived(
 		blogPostsTags.filter(
 			(blogPostTag) => blogPostTag.tags_tag_name === featuredTag
 		).map(
