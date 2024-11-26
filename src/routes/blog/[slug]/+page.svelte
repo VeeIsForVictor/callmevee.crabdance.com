@@ -18,22 +18,30 @@
 
 <div class="h-full w-full flex flex-col justify-left items-center text-justify gap-16 py-20">
 	<Hero heroHeadline={title} heroSubheadline="" heroBackgroundHeight={300} heroBackgroundWidth={1200}/>
-	<div class="flex flex-row gap-4">
-		<div class="w-3/12">
+	<div class="flex lg:flex-row flex-col gap-4">
+		<div class="lg:w-3/12">
 			<div class="w-full prose dark:prose-invert bg-surface-100 dark:bg-surface-900 rounded-lg p-8">
-				<h4>Author:</h4>
-				<h5>{first_name} {last_name}</h5>
-				<h4>Date created:</h4>
-				<h5>{new Date(date_created).toLocaleDateString()}</h5>
-				<h4>Date updated:</h4>
-				<h5>{new Date(date_updated).toLocaleDateString()}</h5>
+				<div class="grid lg:grid-rows-3 lg:grid-cols-1 grid-rows-1 grid-cols-3">
+					<div>
+						<h4>Author:</h4>
+						<h5>{first_name} {last_name}</h5>
+					</div>
+					<div>
+						<h4>Date created:</h4>
+						<h5>{new Date(date_created).toLocaleDateString()}</h5>
+					</div>
+					<div>
+						<h4>Date updated:</h4>
+						<h5>{new Date(date_updated).toLocaleDateString()}</h5>
+					</div>
+				</div>
 				<h4>Tags</h4>
 				{#each blogPostTags as {tags_tag_name: name}}
 					<h5 class="badge variant-filled-primary mx-1">{name}</h5>
 				{/each}
 			</div>
 		</div>
-		<div class="flex flex-col h-full w-9/12 !max-w-none shadow-md p-8 bg-surface-100 dark:bg-surface-900 rounded-lg gap-4">
+		<div class="flex flex-col h-full lg:w-9/12 !max-w-none shadow-md p-8 bg-surface-100 dark:bg-surface-900 rounded-lg gap-4">
 			{@html post_content}
 		</div>
 	</div>
