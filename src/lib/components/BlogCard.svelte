@@ -29,7 +29,7 @@
     });
 </script>
 
-<a transition:blur href={post.link} class="card shrink-0 snap-start h-[100%] py-2" {style}>
+<a transition:blur href={post.link} class="card shrink-0 snap-start h-[100%] py-2 overflow-hidden" {style}>
     <header class="card-header !max-w-none prose dark:prose-invert">
         <h3 class="h3">{post.title}</h3>
     </header>
