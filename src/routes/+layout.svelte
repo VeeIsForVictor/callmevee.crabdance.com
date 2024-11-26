@@ -4,7 +4,7 @@
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
 	import 'highlight.js/styles/github-dark.css';
-	import { Drawer, initializeStores, storeHighlightJs } from '@skeletonlabs/skeleton';
+	import { Drawer, initializeStores, storeHighlightJs, getDrawerStore } from '@skeletonlabs/skeleton';
 	import xml from 'highlight.js/lib/languages/xml'; // for HTML
 	import css from 'highlight.js/lib/languages/css';
 	import javascript from 'highlight.js/lib/languages/javascript';
@@ -13,7 +13,8 @@
 	import NavBar from '$lib/components/NavBar.svelte';
 	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
 
-	initializeStores()
+	initializeStores();
+	const drawerStore = getDrawerStore();
 		
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
@@ -40,7 +41,19 @@
 </svelte:head>
 
 <Drawer>
-	
+	<div class="h-full p-4 flex-col align-center">
+		{#if $drawerStore.id == 'mobileNav'}
+			<h3 class="h3 p-2">
+				{settings.project_name}
+			</h3>
+			<hr>
+			<ul class="flex-col p-2 space-y-4">
+				<li><h5 class="h5">Projects</h5></li>
+				<li><a href="/blog"><h5 class="h5">Blog</h5></a></li>
+				<li><h5 class="h5">About Me</h5></li>
+			</ul>
+		{/if}
+	</div>
 </Drawer>
 <Background />
 <header class="sticky inset-x-0 top-0 z-30 items-center justify-center p-3 lg:px-16">

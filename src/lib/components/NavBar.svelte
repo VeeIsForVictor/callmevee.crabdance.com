@@ -10,7 +10,7 @@
 	let { projectName = "" }: Props = $props();
 	
 	const drawerStore = getDrawerStore();
-	const openDrawer = () => drawerStore.open();
+	const openDrawer = () => drawerStore.open({ position: "right", id: "mobileNav" });
 </script>
 
 <div>
