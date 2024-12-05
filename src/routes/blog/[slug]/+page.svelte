@@ -28,11 +28,11 @@
 					</div>
 					<div>
 						<h4>Date created:</h4>
-						<h5>{new Date(date_created).toLocaleDateString()}</h5>
+						<time datetime={date_created}>{new Date(date_created).toLocaleDateString()}</time>
 					</div>
 					<div>
 						<h4>Date updated:</h4>
-						<h5>{new Date(date_updated).toLocaleDateString()}</h5>
+						<time datetime={date_created}>{new Date(date_updated).toLocaleDateString()}</time>
 					</div>
 				</div>
 				<h4>Tags</h4>
