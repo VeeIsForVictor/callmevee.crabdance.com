@@ -22,7 +22,7 @@
 			</a>
 			<nav>
 				<ul class="flex flex-row justify-around gap-20 -translate-x-1/4">
-					<li><h5>Projects</h5></li>
+					<li><a href="/work"><h5>Work</h5></a></li>
 					<li><a href="/blog"><h5>Blog</h5></a></li>
 					<li><h5>About Me</h5></li>
 				</ul>
