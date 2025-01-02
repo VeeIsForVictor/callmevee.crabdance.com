@@ -5,6 +5,8 @@ import { BlogPostsTags } from '$lib/models/blog_posts_tags.js';
 import { Users } from '$lib/models/user.js';
 import { readItems } from '@directus/sdk';
 import { parse } from 'valibot';
+import { JSDOM } from 'jsdom';
+import { strict } from 'assert';
 
 export async function load({ fetch, params }) {
 	const directus = getDirectusInstance(fetch);
@@ -19,6 +21,20 @@ export async function load({ fetch, params }) {
     const post = posts.find( (post) => post.slug === slugName )
     const author = users.find( (user) => user.id === post?.author )
     const blogPostTags = blogPostsTags.filter( (postsTags) => postsTags.blog_posts_id == post?.id )
+    strict(typeof post !== 'undefined');
+    strict(post?.post_content !== null);
+
+    const contentDOM = new JSDOM(post.post_content);
+
+    const allHeaders = contentDOM.window.document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+    for(let idx = 0; idx < allHeaders.length; idx++) {
+        const header = allHeaders.item(idx);
+        strict(header?.className != null)
+        header.classList.add(header.localName);
+    }
+    
+    post.post_content = contentDOM.serialize()
 
     return {
         post,

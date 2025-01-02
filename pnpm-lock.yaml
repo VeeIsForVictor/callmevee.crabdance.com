@@ -17,9 +17,6 @@ importers:
       '@steeze-ui/svelte-icon':
         specifier: ^1.6.2
         version: 1.6.2(svelte@5.2.5)
-      '@types/jsdom':
-        specifier: ^21.1.7
-        version: 21.1.7
       highlight.js:
         specifier: 11.10.0
         version: 11.10.0
@@ -66,6 +63,9 @@ importers:
       '@types/eslint':
         specifier: ^9.6.1
         version: 9.6.1
+      '@types/jsdom':
+        specifier: ^21.1.7
+        version: 21.1.7
       '@types/node':
         specifier: 22.8.6
         version: 22.8.6
