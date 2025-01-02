@@ -20,18 +20,18 @@
 	<Hero heroHeadline={title} heroSubheadline="" heroBackgroundHeight={300} heroBackgroundWidth={1200}/>
 	<div class="flex lg:flex-row flex-col gap-4">
 		<div class="lg:w-3/12">
-			<div class="w-full prose dark:prose-invert bg-surface-100 dark:bg-surface-900 rounded-lg p-8">
+			<div class="w-full prose dark:prose-invert prose-headings:my-2 bg-surface-100 dark:bg-surface-900 rounded-lg p-8">
 				<div class="grid lg:grid-rows-3 lg:grid-cols-1 grid-rows-1 grid-cols-3">
 					<div>
-						<h4>Author:</h4>
+						<h5 class="h5">Author:</h5>
 						<h5>{first_name} {last_name}</h5>
 					</div>
 					<div>
-						<h4>Date created:</h4>
+						<h5 class="h5">Date created:</h5>
 						<time datetime={date_created}>{new Date(date_created).toLocaleDateString()}</time>
 					</div>
 					<div>
-						<h4>Date updated:</h4>
+						<h5 class="h5">Date updated:</h5>
 						<time datetime={date_created}>{new Date(date_updated).toLocaleDateString()}</time>
 					</div>
 				</div>
