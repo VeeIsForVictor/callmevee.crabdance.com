@@ -52,6 +52,7 @@
 		"@steeze-ui/svelte-icon": "^1.6.2",
 		"@types/jsdom": "^21.1.7",
 		"highlight.js": "11.10.0",
+		"jsdom": "^25.0.1",
 		"marked": "^15.0.1",
 		"posthog-js": "^1.187.2",
 		"sanitize-html": "^2.13.1"
