@@ -38,6 +38,8 @@
 				<h4>Tags</h4>
 				{#each blogPostTags as {tags_tag_name: name}}
 					<h5 class="badge variant-filled-primary mx-1">{name}</h5>
+				{:else}
+					<h5 class="badge variant-filled-error mx-1">none</h5>
 				{/each}
 			</div>
 		</div>
