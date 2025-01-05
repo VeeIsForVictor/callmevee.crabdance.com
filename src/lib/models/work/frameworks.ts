@@ -1,4 +1,4 @@
-import { object, string, type InferOutput } from "valibot";
+import { array, object, string, type InferOutput } from "valibot";
 import { BaseCollection } from "../base";
 
 export const Framework = object({
@@ -7,4 +7,7 @@ export const Framework = object({
     icon: string(),
 });
 
+export const Frameworks = array(Framework);
+
 export type Framework = InferOutput<typeof Framework>;
+export type Frameworks = InferOutput<typeof Frameworks>;
