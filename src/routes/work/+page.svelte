@@ -8,7 +8,7 @@
 </svelte:head>
 
 <div class="flex flex-col w-full space-y-32 items-center">
-	<SkillSummary/>
+	<SkillSummary {...data}/>
 
 	<div class="space-y-5 prose dark:prose-invert w-1/2">
 		<h1 class="h1">Hi there!</h1>
