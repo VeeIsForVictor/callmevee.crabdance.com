@@ -1,6 +1,7 @@
 <script>
 	import SkillSummary from "$lib/components/SkillSummary.svelte";
 
+	export let data;
 </script>
 <svelte:head>
 	<title>CallMeVee</title>
