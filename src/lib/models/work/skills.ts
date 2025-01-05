@@ -13,4 +13,4 @@ export const Skill = object({
 export const Skills = array(Skill);
 
 export type Skill = InferOutput<typeof Skill>;
-export type Skills = InferOutput<typeof Skill>;
+export type Skills = InferOutput<typeof Skills>;
