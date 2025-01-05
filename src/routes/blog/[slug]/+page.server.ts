@@ -1,8 +1,8 @@
 import { PUBLIC_APIURL } from '$env/static/public';
 import getDirectusInstance from '$lib/directus';
-import { BlogPosts } from '$lib/models/blog_post.js';
-import { BlogPostsTags } from '$lib/models/blog_posts_tags.js';
-import { Users } from '$lib/models/user.js';
+import { BlogPosts } from '$lib/models/blog/blog_post';
+import { BlogPostsTags } from '$lib/models/blog/blog_posts_tags';
+import { Users } from '$lib/models/user';
 import { readItems } from '@directus/sdk';
 import { parse } from 'valibot';
 import { JSDOM } from 'jsdom';

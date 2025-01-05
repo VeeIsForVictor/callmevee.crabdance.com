@@ -1,8 +1,8 @@
 import getDirectusInstance from '$lib/directus';
-import { Blog } from '$lib/models/blog.js';
-import { BlogPosts } from '$lib/models/blog_post.js';
-import { BlogPostsTags } from '$lib/models/blog_posts_tags.js';
-import { Tags } from '$lib/models/tag.js';
+import { Blog } from '$lib/models/blog';
+import { BlogPosts } from '$lib/models/blog/blog_post';
+import { BlogPostsTags } from '$lib/models/blog/blog_posts_tags';
+import { Tags } from '$lib/models/blog/tag';
 import { readItems, readSingleton } from '@directus/sdk';
 import { parse } from 'valibot';
 

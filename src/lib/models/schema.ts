@@ -1,9 +1,9 @@
 import { object, type InferOutput } from 'valibot';
-import { BlogPosts } from './blog_post';
+import { BlogPosts } from './blog/blog_post';
 import { Blog } from './blog';
-import { Tags } from './tag';
-import { BlogPostsTags } from './blog_posts_tags';
-import { Languages } from './languages';
+import { Tags } from './blog/tag';
+import { BlogPostsTags } from './blog/blog_posts_tags';
+import { Languages } from './work/languages';
 
 export const Schema = object({
 	blog: Blog,
