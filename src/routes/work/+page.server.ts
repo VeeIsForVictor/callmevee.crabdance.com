@@ -5,7 +5,7 @@ import { parse } from 'valibot';
 
 export async function load({ fetch }) {
     const directus = getDirectusInstance(fetch);
-    const skills = parse(Skills, directus.request(readItems('skills')))
+    const skills = parse(Skills, await directus.request(readItems('skills')))
 
     const languages = skills.filter((val) => val.type == 'language');
     const frameworks = skills.filter((val) => val.type == 'framework');
