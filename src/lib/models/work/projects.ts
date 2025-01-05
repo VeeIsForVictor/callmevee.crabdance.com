@@ -1,8 +1,15 @@
-import { array, object, type InferOutput } from "valibot";
+import { array, date, object, optional, pipe, string, url, type InferOutput } from "valibot";
 import { BaseCollection } from "../base";
+import { cleanHtml } from "$lib/model-utilities";
+import { Skills } from "./skills";
 
 export const Project = object({
     ...BaseCollection.entries,
+    name: string(),
+    project_date: date(),
+    repository_link: pipe(string(), url()),
+    description: pipe(string(), cleanHtml),
+	skills: optional(Skills)
 });
 
 export const Projects = array(Project);
