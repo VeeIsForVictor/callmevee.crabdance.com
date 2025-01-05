@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Frameworks } from "$lib/models/work/frameworks";
-	import type { Languages } from "$lib/models/work/languages";
+	import type { Languages } from "$lib/models/work/skills";
 	import type { Technologies } from "$lib/models/work/technologies";
 	import SkillContainer from "./SkillContainer.svelte";
 

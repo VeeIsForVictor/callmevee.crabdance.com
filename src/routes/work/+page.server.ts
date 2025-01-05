@@ -1,15 +1,19 @@
 import getDirectusInstance from '$lib/directus';
-import { Frameworks } from '$lib/models/work/frameworks.js';
-import { Languages } from '$lib/models/work/languages';
-import { Technologies } from '$lib/models/work/technologies.js';
+import { Skills } from '$lib/models/work/skills';
 import { readItems } from '@directus/sdk';
 import { parse } from 'valibot';
 
 export async function load({ fetch }) {
-    const directus = getDirectusInstance(fetch)
+    const directus = getDirectusInstance(fetch);
+    const skills = parse(Skills, directus.request(readItems('skills')))
+
+    const languages = skills.filter((val) => val.type == 'language');
+    const frameworks = skills.filter((val) => val.type == 'framework');
+    const technologies = skills.filter((val) => val.type == 'technology');
+
     return {
-        languages: parse(Languages, await directus.request(readItems("languages"))),
-        frameworks: parse(Frameworks, await directus.request(readItems("frameworks"))),
-        technologies: parse(Technologies, await directus.request(readItems("technologies"))),
+        languages,
+        frameworks,
+        technologies,
     }
 }
