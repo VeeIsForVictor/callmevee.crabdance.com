@@ -1,3 +1,5 @@
+<!-- Credits to Basti Ortiz <bastidood.github.io> and his portfolio, which was my inspiration for this design -->
+
 <script lang="ts">
 	import { PUBLIC_APIURL } from "$env/static/public";
 
