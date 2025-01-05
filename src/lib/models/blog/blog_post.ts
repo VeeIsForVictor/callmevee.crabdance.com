@@ -1,10 +1,9 @@
-import { cleanHtml, compileMarkdown, validateDateCreated, validateDateUpdated } from '$lib/model-utilities';
-import { object, pipe, string, uuid, array, type InferOutput, nullable, number } from 'valibot';
+import { cleanHtml, compileMarkdown } from '$lib/model-utilities';
+import { object, pipe, string, uuid, array, type InferOutput, nullable } from 'valibot';
+import { BaseCollection } from '../base';
 
 export const BlogPost = object({
-	id: number(),
-	date_created: validateDateCreated,
-	date_updated: validateDateUpdated,
+	...BaseCollection.entries,
 	title: string(),
 	author: nullable(pipe(string(), uuid())),
 	slug: string(),

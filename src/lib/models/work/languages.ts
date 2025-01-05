@@ -1,10 +1,8 @@
-import { validateDateCreated, validateDateUpdated } from '$lib/model-utilities';
-import { object, string, array, type InferOutput, number, picklist } from 'valibot';
+import { object, string, array, type InferOutput, picklist } from 'valibot';
+import { BaseCollection } from '../base';
 
 export const Language = object({
-	id: number(),
-	date_created: validateDateCreated,
-	date_updated: validateDateUpdated,
+    ...BaseCollection.entries,
 	status: picklist(['visible', 'hidden']),
     name: string(),
     icon: string()

@@ -1,9 +1,9 @@
-import { cleanHtml, validateDateCreated, validateDateUpdated } from '$lib/model-utilities';
-import { object, pipe, string, type InferOutput } from 'valibot';
+import { cleanHtml } from '$lib/model-utilities';
+import { object, pick, pipe, string, type InferOutput } from 'valibot';
+import { BaseCollection } from '../base';
 
 export const Blog = object({
-	date_created: validateDateCreated,
-	date_updated: validateDateUpdated,
+	...pick(BaseCollection, ["date_created", "date_updated"]).entries,
 	headline: string(),
 	subheadline: pipe(string(), cleanHtml),
 	hero_background: string(),
