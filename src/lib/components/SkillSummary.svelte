@@ -1,13 +1,11 @@
 <script lang="ts">
-	import type { Frameworks } from "$lib/models/work/frameworks";
-	import type { Languages } from "$lib/models/work/skills";
-	import type { Technologies } from "$lib/models/work/technologies";
+	import type { Skills } from "$lib/models/work/skills";
 	import SkillContainer from "./SkillContainer.svelte";
 
     interface Props {
-        languages: Languages,
-        frameworks: Frameworks,
-        technologies: Technologies
+        languages: Skills,
+        frameworks: Skills,
+        technologies: Skills
     }
 
     let { languages, frameworks, technologies }: Props = $props();
