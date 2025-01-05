@@ -14,13 +14,13 @@
     let {name, items = []}: Props = $props();
 </script>
 
-<div>
+<div class="flex-1 text-center">
     <h3 class="h3">{name}</h3>
     {#each items as item}
         {@const imageURL=`${PUBLIC_APIURL}/assets/${item.icon}`}
-        <div>
-            <img src={imageURL} height=48 width=48 alt={item.name}>
-            <h4>{item.name}</h4>
-        </div>
+        <figure class="inline-block m-2">
+            <img class="m-auto h-12 w-12" src={imageURL} height=48 width=48 alt={`${item.icon} logo`}>
+            <figcaption class="text-center">{item.name}</figcaption>
+        </figure>
     {/each}
 </div>
