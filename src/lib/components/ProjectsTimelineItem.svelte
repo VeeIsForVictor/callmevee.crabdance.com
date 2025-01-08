@@ -13,7 +13,7 @@
     let date = `${project_date.getMonth()} ${project_date.getFullYear()}`
 </script>
 
-<div class="card p-8 w-full">
+<article class="card p-8 w-full">
     <h3 class="h3">{project.name}</h3>
     <p>{project.description}</p>
-</div>
+</article>
