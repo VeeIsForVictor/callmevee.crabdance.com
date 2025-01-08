@@ -11,7 +11,7 @@
 	<title>CallMeVee</title>
 </svelte:head>
 
-<div class="flex flex-col w-full items-center">
+<div class="flex space-y-8 flex-col w-full items-center">
 	<SkillSummary {...skills}/>
 
 	<ProjectsTimeline projects={projects}/>
