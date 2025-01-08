@@ -15,6 +15,10 @@
 
 <article class="card p-8 w-full !max-w-none prose dark:prose-invert prose-p:m-0">
     <h3 class="h3">{name}</h3>
-    <hr class="!mb-4"/>
+    <hr class="!mb-0"/>
+    <p class="text-right">
+        <small>Released on <time datetime={project_date.toString()}>{project_date.toLocaleDateString()}</time></small>
+    </p>
+
     {@html description}
 </article>
