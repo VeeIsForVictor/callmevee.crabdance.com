@@ -10,7 +10,6 @@
     let project_date = new Date(project.project_date);
 
     let date = `${project_date.getMonth()} ${project_date.getFullYear()}`
-    console.log(description)
 </script>
 
 <article class="card p-8 w-full !max-w-none prose dark:prose-invert prose-p:m-0">
