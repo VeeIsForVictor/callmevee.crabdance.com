@@ -11,15 +11,8 @@
 	<title>CallMeVee</title>
 </svelte:head>
 
-<div class="flex flex-col w-full space-y-32 items-center">
+<div class="flex flex-col w-full items-center">
 	<SkillSummary {...skills}/>
 
 	<ProjectsTimeline projects={projects}/>
-
-	<div class="space-y-5 prose dark:prose-invert w-1/2">
-		<h1 class="h1">Hi there!</h1>
-		<p>
-			This page is a work in progress, check back later when this page looks cooler!
-		</p>
-	</div>
 </div>
