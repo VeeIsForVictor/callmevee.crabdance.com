@@ -11,20 +11,26 @@
 	
 	const drawerStore = getDrawerStore();
 	const openDrawer = () => drawerStore.open({ position: "right", id: "mobileNav" });
+
+	const items: {text: string, link: string}[] = [
+		{text: "Work", link: "/work"},
+		{text: "Blog", link: "/blog"},
+		{text: "About Me", link: "/about"},
+	]
 </script>
 
 <div>
 	<div class="rounded-xl border-2 border-surface-700 shadow-lg backdrop-blur-xl lg:mx-24 p-2 px-4">
 		<!-- Full navbar when large or stow away in the side -->
 		<div class="lg:flex items-center justify-between hidden">
-			<a href="/">
+			<a class="duration-300 transition-all rounded-lg hover:bg-primary-600/20 p-1" href="/">
 				<h4 class="h4">{projectName}</h4>
 			</a>
 			<nav>
-				<ul class="flex flex-row justify-around gap-20 -translate-x-1/4">
-					<li><a href="/work"><h5>Work</h5></a></li>
-					<li><a href="/blog"><h5>Blog</h5></a></li>
-					<li><a href="/about"><h5>About Me</h5></a></li>
+				<ul class="flex flex-row justify-around gap-20 -translate-x-1/4 items-center">
+					{#each items as {text, link}}
+						<li class="duration-300 transition-all m-0.5 rounded-md hover:bg-secondary-600/20 p-1"><a href={link}><h5>{text}</h5></a></li>
+					{/each}
 				</ul>
 			</nav>
 			<LightSwitch />
