@@ -48,9 +48,9 @@
 			</h3>
 			<hr>
 			<ul class="flex-col p-2 space-y-4">
-				<li><h5 class="h5">Projects</h5></li>
+				<li><a href="/work"><h5 class="h5">Projects</h5></a></li>
 				<li><a href="/blog"><h5 class="h5">Blog</h5></a></li>
-				<li><h5 class="h5">About Me</h5></li>
+				<li><a href="/about"><h5 class="h5">About Me</h5></a></li>
 			</ul>
 		{/if}
 	</div>
